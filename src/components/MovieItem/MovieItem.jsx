@@ -1,12 +1,24 @@
 import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import Typography from '@material-ui/core/Typography';
 
-function MovieItem() {
+function MovieItem({movie}) {
     const movies = useSelector(store => store.movies);
+    const history = useHistory();
+
+    const onMovieClick = () => {
+        console.log('clicked on a movie', movies);
+        history.push(`/details/${movies.id}`)
+    }
 
     return (
         <>
-            <h3>{movies.title}</h3>
-            <img src={movies.poster} alt={movies.title}/>
+            <div>
+                <Typography variant="overline">{movie.title}</Typography>
+            </div>
+            <div>
+                <img onClick={onMovieClick} src={movie.poster} alt={movie.title}/>
+            </div>
         </>
     )
 }

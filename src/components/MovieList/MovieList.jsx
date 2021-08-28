@@ -1,23 +1,16 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
 import './MovieList.css'
 import { Grid } from '@material-ui/core';
-import Typography from '@material-ui/core/Typography';
+import MovieItem from '../MovieItem/MovieItem';
 
 function MovieList() {
-    const history = useHistory();
     const dispatch = useDispatch();
     const movies = useSelector(store => store.movies);
 
     useEffect(() => {
         dispatch({ type: 'FETCH_MOVIES' });
     }, []);
-
-    const onMovieClick = () => {
-        console.log('clicked on a movie');
-        history.push(`/details/:id`)
-    }
 
     return (
         <>
@@ -26,12 +19,9 @@ function MovieList() {
                 {movies.map(movie => {
                 return (
                     <Grid item md={3} key={movie.id}>
-                        <div>
-                            <Typography variant="overline">{movie.title}</Typography>
-                        </div>
-                        <div>
-                            <img onClick={onMovieClick} src={movie.poster} alt={movie.title}/>
-                        </div>
+                        <MovieItem 
+                            movie={movie}
+                        />
                     </Grid>
                 );
                 })}
