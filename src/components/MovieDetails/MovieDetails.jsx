@@ -1,11 +1,12 @@
-import { useDispatch, useSelector } from 'react-redux';
-
+import MovieDetailItem from "../MovieDetailItem/MovieDetailItem";
 
 function MovieDetails() {
-    const movies = useSelector(store => store.movies);
 
     return (
+        <>
         <h1>Here are some movie details!!!</h1>
+        <MovieDetailItem />
+        </>
     )
 }
 
