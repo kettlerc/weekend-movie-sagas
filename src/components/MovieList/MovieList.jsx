@@ -12,10 +12,14 @@ function MovieList() {
         dispatch({ type: 'FETCH_MOVIES' });
     }, []);
 
+    const onMovieClick = () => {
+        console.log('clicked on a movie');
+    }
+
     return (
         <>
             <h1>MovieList</h1>
-            <Grid container justifyContent="center" spacing={4}>
+            <Grid container spacing={4}>
                 {movies.map(movie => {
                 return (
                     <Grid item md={3} key={movie.id}>
@@ -23,7 +27,7 @@ function MovieList() {
                             <Typography variant="overline">{movie.title}</Typography>
                         </div>
                         <div>
-                            <img src={movie.poster} alt={movie.title}/>
+                            <img onClick={onMovieClick} src={movie.poster} alt={movie.title}/>
                         </div>
                     </Grid>
                 );
