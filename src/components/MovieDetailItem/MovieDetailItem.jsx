@@ -1,12 +1,14 @@
 import { useDispatch, useSelector } from 'react-redux';
 
 
-function MovieDetailItem() {
+function MovieDetailItem({movie}) {
     const movies = useSelector(store => store.movies);
 
     return (
         <>
-        <h1>and some more details...</h1>
+        <img src={movie.poster}></img>
+        <h2>{movie.title}</h2>
+        <p>{movie.description}</p>
         </>
     )
 }
