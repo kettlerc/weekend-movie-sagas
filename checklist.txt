@@ -10,7 +10,7 @@
     [X] input field for title
     [X] input field for poster url
     [X] textarea for description
-    [ ] dropdown for genres
+    [X] dropdown for genres
     [X] cancel button (back to home)
     [X] save button (POST to db)
 [ ] material style
