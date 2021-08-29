@@ -7,9 +7,9 @@
     [ ] show all genres (junction table)
     [ ] back to list button
 [ ] Add movie page
-    [ ] input field for title
-    [ ] input field for poster url
-    [ ] textarea for description
+    [X] input field for title
+    [X] input field for poster url
+    [X] textarea for description
     [ ] dropdown for genres
     [ ] cancel button (back to home)
     [ ] save button (POST to db)
