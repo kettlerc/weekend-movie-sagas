@@ -1,5 +1,5 @@
-[ ] fork/clone/install
-[ ] create db
+[X] fork/clone/install
+[X] create db
 [ ] onClick for poster
     [ ] takes user to details page for specific movie
 [ ] Details page
@@ -14,7 +14,7 @@
     [ ] cancel button (back to home)
     [ ] save button (POST to db)
 [ ] material style
-    [ ] grids
+    [X] grids
     [ ] cards
 [ ] code comments
 [ ] update README
