@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import './MovieList.css'
 import { Grid } from '@material-ui/core';
 import MovieItem from '../MovieItem/MovieItem';
+import Button from '@material-ui/core/Button';
 
 function MovieList() {
     const dispatch = useDispatch();
@@ -14,7 +16,7 @@ function MovieList() {
 
     return (
         <>
-            <h1>MovieList</h1>
+            <Link to='/addmovie'><Button variant="outlined">Add Movie</Button></Link>      
             <Grid container spacing={4}>
                 {movies.map(movie => {
                 return (
