@@ -1,14 +1,15 @@
-import {HashRouter as Router, Route} from 'react-router-dom';
+import {HashRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 import MovieList from '../MovieList/MovieList'
 import MovieDetails from '../MovieDetails/MovieDetails';
 import AddMovieForm from '../AddMovieForm/AddMovieForm';
+import Typography from '@material-ui/core/Typography';
 
 function App() {
   return (
     <div className="App">
-      <h1>The Movies Saga!</h1>
-      <Router>        
+      <Router>  
+      <Typography variant="h1">THE MOVIES SAGA</Typography>
         <Route path="/" exact>
           <MovieList />
         </Route>
