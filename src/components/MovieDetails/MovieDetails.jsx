@@ -2,9 +2,6 @@ import MovieDetailItem from "../MovieDetailItem/MovieDetailItem";
 import { Link } from 'react-router-dom';
 
 function MovieDetails() {
-
-
-
     return (
         <>
         <h1>Here are some movie details!!!</h1>

@@ -8,7 +8,8 @@ function MovieItem({movie}) {
 
     const onMovieClick = () => {
         console.log('clicked on a movie', movies);
-        history.push(`/details`)
+        const id = movie.id;
+        history.push(`/details/${id}`)
     }
 
     return (
