@@ -7,15 +7,17 @@ function MovieDetails() {
 
     return (
         <>
-        <h1>{movies.title}</h1>
         <Link to='/'><button>Return to movie list</button></Link>
+        <div>
         {movies.map(movie =>{
             if (movie.id === 1) {
                 return <MovieDetailItem
+                            key={movie.id}
                             movie={movie} 
                         />
             }
         })}
+        </div>
         </>
     )
 }
