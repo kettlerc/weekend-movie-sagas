@@ -15,6 +15,7 @@ import axios from 'axios';
 function* rootSaga() {
     yield takeEvery('FETCH_MOVIES', fetchAllMovies);
     yield takeEvery('FETCH_GENRES', fetchAllGenres);
+    yield takeEvery('FETCH_DETAILS', fetchDetails);
     yield takeEvery('ADD_MOVIE', addMovie);
 }
 
@@ -43,6 +44,19 @@ function* fetchAllGenres() {
     }
 }
 
+function* fetchDetails(id) {
+    try{
+        const details = yield axios.get(`/api/movie/${id}`);
+        console.log('id is', id);
+        yield put({
+            type: 'SET_DETAILS',
+            payload: details.data
+        })
+    } catch {
+        console.log('get details error');   
+    }
+}
+
 function* addMovie(action) {
     try{
         yield axios.post('/api/movie', action.payload);
@@ -63,6 +77,8 @@ const movies = (state = [], action) => {
     switch (action.type) {
         case 'SET_MOVIES':
             return action.payload;
+        case 'SET_DETAILS':
+            return action.payload.id
         case 'ADD_MOVIE':
             return [ ...state, action.payload ]
         default:

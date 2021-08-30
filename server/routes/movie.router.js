@@ -12,7 +12,23 @@ router.get('/', (req, res) => {
       console.log('ERROR: Get all movies', err);
       res.sendStatus(500)
     })
+});
 
+router.get('/:id', (req, res) => {
+  const query = ` SELECT * FROM movies 
+                  WHERE "id" = $1`;
+  const sqlParams = [
+        req.params.id
+    ];
+  pool.query(query, sqlParams)
+    .then( result => {
+      console.log('here are movie details');
+      res.sendStatus(200)
+    })
+    .catch(err => {
+      console.log('ERROR: Get all details error', err);
+      res.sendStatus(500)
+    })
 });
 
 router.post('/', (req, res) => {

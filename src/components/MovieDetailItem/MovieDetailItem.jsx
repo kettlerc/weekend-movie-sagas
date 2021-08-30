@@ -3,12 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 
 function MovieDetailItem({movie}) {
-    const dispatch = useDispatch();
     const genres = useSelector(store => store.genres);
-
-    useEffect(() => {
-        dispatch({ type: 'FETCH_GENRES'})
-    }, []);
 
     return (
         <>

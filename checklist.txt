@@ -1,6 +1,6 @@
 [X] fork/clone/install
 [X] create db
-[ ] onClick for poster
+[X] onClick for poster
     [ ] takes user to details page for specific movie
 [ ] Details page
     [ ] shows all details

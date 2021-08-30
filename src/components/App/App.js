@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <Router>  
-      <Typography variant="h1">THE MOVIES SAGA</Typography>
+      <Typography variant="h2">THE MOVIES SAGA</Typography>
         <Route path="/" exact>
           <MovieList />
         </Route>
